@@ -1,0 +1,8 @@
+<%= label(object_name, method, options.merge({
+  class: "hotwired_component-tw-forms-label",
+  :"data-controller" => "hotwired_component--tw--forms--label--component"
+})) do %>
+  <span class="label-text<%= alt %>">
+    <%= content %>
+  </span>
+<% end %>
