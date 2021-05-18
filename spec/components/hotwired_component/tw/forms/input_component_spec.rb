@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require "rails_helper"
-RSpec.describe HotwiredComponent::Tw::Forms::InputComponent, type: :view do
+
+RSpec.describe HotwiredComponent::Tw::Forms::LabelComponent, type: :view do
   let(:object) { User.new }
   let(:method) { :email }
   let(:object_name) { nil }
@@ -69,8 +70,7 @@ RSpec.describe HotwiredComponent::Tw::Forms::InputComponent, type: :view do
         .with({
           method:      method,
           object_name: object_name,
-          value:       nil,
-          alt:         true
+          value:       nil
         })
 
       render(subject)

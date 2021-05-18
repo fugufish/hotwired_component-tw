@@ -14,8 +14,7 @@ RSpec.describe HotwiredComponent::Tw::Forms::LabelComponent, type: :view do
       method:      method,
       object_name: object_name,
       value:       value,
-      options:     options,
-      alt:         alt
+      options:     options
     }
   end
 

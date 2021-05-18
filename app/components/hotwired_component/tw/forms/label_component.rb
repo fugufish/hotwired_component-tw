@@ -7,7 +7,6 @@ module HotwiredComponent
         def initialize(
           method:,
           object_name:,
-          alt: false,
           value: nil,
           options: {}
         )
@@ -16,7 +15,6 @@ module HotwiredComponent
           @object_name = object_name
           @value       = value
           @options     = options
-          @alt         = alt
         end
 
         private
