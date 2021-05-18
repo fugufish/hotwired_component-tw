@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "rails_helper"
-RSpec.describe HotwiredComponent::Daisy::Forms::InputComponent, type: :view do
+RSpec.describe HotwiredComponent::Tw::Forms::InputComponent, type: :view do
   let(:object) { User.new }
   let(:method) { :email }
   let(:object_name) { nil }
@@ -16,13 +16,13 @@ RSpec.describe HotwiredComponent::Daisy::Forms::InputComponent, type: :view do
     }
   end
 
-  let(:label) { double(HotwiredComponent::Daisy::Forms::LabelComponent) }
+  let(:label) { double(HotwiredComponent::Tw::Forms::LabelComponent) }
 
   subject { described_class.new(**default_options) }
 
   describe "render" do
     it "should render the input with labels" do
-      expect(HotwiredComponent::Daisy::Forms::LabelComponent).to receive(:new)
+      expect(HotwiredComponent::Tw::Forms::LabelComponent).to receive(:new)
         .twice.and_return(label)
 
       expect(subject).to receive(:render).twice.with(label).and_return("")
@@ -30,8 +30,8 @@ RSpec.describe HotwiredComponent::Daisy::Forms::InputComponent, type: :view do
       render(subject)
 
       expect(rendered).to have_css(
-        ".daisy-forms-input.form-control" \
-        "[data-controller='daisy--forms--input--component']" \
+        ".hotwired-component-forms-input.form-control" \
+        "[data-controller='hotwired-component--forms--input--component']" \
         "> input[type='text'][name='[email]']"
       )
     end
@@ -39,12 +39,12 @@ RSpec.describe HotwiredComponent::Daisy::Forms::InputComponent, type: :view do
 
   describe "#label" do
     before :each do
-      allow(HotwiredComponent::Daisy::Forms::LabelComponent).to receive(:new).and_return(label)
+      allow(HotwiredComponent::Tw::Forms::LabelComponent).to receive(:new).and_return(label)
       allow(subject).to receive(:render).and_return("")
     end
 
     it "should render the label" do
-      expect(HotwiredComponent::Daisy::Forms::LabelComponent).to receive(:new)
+      expect(HotwiredComponent::Tw::Forms::LabelComponent).to receive(:new)
         .at_least(:once)
         .with({
           method:      method,
@@ -59,12 +59,12 @@ RSpec.describe HotwiredComponent::Daisy::Forms::InputComponent, type: :view do
 
   describe "#error_label" do
     before :each do
-      allow(HotwiredComponent::Daisy::Forms::LabelComponent).to receive(:new).and_return(label)
+      allow(HotwiredComponent::Tw::Forms::LabelComponent).to receive(:new).and_return(label)
       allow(subject).to receive(:render).and_return("")
     end
 
     it "should render the label" do
-      expect(HotwiredComponent::Daisy::Forms::LabelComponent).to receive(:new)
+      expect(HotwiredComponent::Tw::Forms::LabelComponent).to receive(:new)
         .at_least(:once)
         .with({
           method:      method,

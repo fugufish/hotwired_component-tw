@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "rails_helper"
-RSpec.describe HotwiredComponent::Daisy::Forms::SubmitButtonComponent,
+RSpec.describe HotwiredComponent::Tw::Forms::SubmitButtonComponent,
   type: :view do
   let(:value) { "Sign Up" }
   let(:options) { {} }

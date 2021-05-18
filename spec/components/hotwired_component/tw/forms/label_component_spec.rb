@@ -25,11 +25,10 @@ RSpec.describe HotwiredComponent::Tw::Forms::LabelComponent, type: :view do
     context "default label" do
       it "should render a valid label" do
         render(subject)
-        binding.pry
+
         expect(rendered).to have_css(
-          "label.tw-forms-label.label" \
-          "[data-controller='tw--forms--label--component']" \
-          "> span.label-text"
+          ".hotwired-component-tw-forms-label" \
+          "[data-controller='hotwired-component--tw--forms--label--component']"
         )
 
         expect(rendered).to have_text("Email")
@@ -51,27 +50,6 @@ RSpec.describe HotwiredComponent::Tw::Forms::LabelComponent, type: :view do
         end
 
         expect(rendered).to have_text("In Block")
-      end
-    end
-
-    context "with alt" do
-      let(:alt) { true }
-      let(:value) { "foo" }
-
-      it "should render with alt class" do
-        render(subject)
-
-        expect(rendered).to have_css(".label-text-alt")
-      end
-    end
-
-    context "with alt but no value" do
-      let(:alt) { true }
-
-      it "should not render the alt label" do
-        render(subject)
-
-        expect(rendered).to_not have_css(".label-text-alt")
       end
     end
 

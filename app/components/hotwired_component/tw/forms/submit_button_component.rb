@@ -3,7 +3,7 @@
 module HotwiredComponent
   module Tw
     module Forms
-      class SubmitButtonComponent < ApplicationComponent
+      class SubmitButtonComponent < TwComponent
       end
     end
   end

@@ -13,8 +13,10 @@ end
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 gem "capybara", require: false
+gem "debase"
 gem "pry-byebug"
 gem "rspec-rails"
 gem "rubocop-daemon"
 gem "rubocop-rails"
+gem "ruby-debug-ide"
 gem "solargraph"

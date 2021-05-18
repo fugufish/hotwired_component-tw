@@ -28,7 +28,7 @@ module HotwiredComponent
         def label
           value, opts = extract_label_options(options.delete(:label))
 
-          render(Daisy::Forms::LabelComponent.new(
+          render(Tw::Forms::LabelComponent.new(
             method:      method,
             object_name: object_name,
             value:       value,
@@ -37,7 +37,7 @@ module HotwiredComponent
         end
 
         def error_label
-          render(Daisy::Forms::LabelComponent.new(
+          render(Tw::Forms::LabelComponent.new(
             method:      method,
             object_name: object_name,
             value:       object.errors[method]&.first,
