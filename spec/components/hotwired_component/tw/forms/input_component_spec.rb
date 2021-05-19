@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe HotwiredComponent::Tw::Forms::LabelComponent, type: :view do
+RSpec.describe HotwiredComponent::Tw::Forms::InputComponent, type: :view do
   let(:object) { User.new }
   let(:method) { :email }
   let(:object_name) { nil }
@@ -30,8 +30,10 @@ RSpec.describe HotwiredComponent::Tw::Forms::LabelComponent, type: :view do
 
       render(subject)
 
+      binding.pry
+
       expect(rendered).to have_css(
-        ".hotwired-component-forms-input.form-control" \
+        ".hotwired-component-forms-input" \
         "[data-controller='hotwired-component--forms--input--component']" \
         "> input[type='text'][name='[email]']"
       )

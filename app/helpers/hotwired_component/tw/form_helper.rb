@@ -54,6 +54,14 @@ module HotwiredComponent
           [content, options]
         end
       end
+
+      def tw_form_for(model, options = {}, &block)
+        form_for(
+          model, options.merge(builder: FormBuilder), &block
+        )
+      end
+
+      alias tw_form_with tw_form_for
     end
   end
 end

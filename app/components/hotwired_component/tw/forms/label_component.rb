@@ -14,7 +14,15 @@ module HotwiredComponent
           @method      = method
           @object_name = object_name
           @value       = value
-          @options     = options
+          @options     = options.merge(
+            class: css_classes(options.delete(:class))
+          )
+        end
+
+        def css_classes(additional)
+          (["hotwired-component-tw-label"] + Tw.label_classes + [additional])
+            .compact
+            .join(" ")
         end
 
         private

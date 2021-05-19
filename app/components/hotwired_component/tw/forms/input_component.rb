@@ -25,26 +25,6 @@ module HotwiredComponent
           "#{object_name}[#{method}]"
         end
 
-        def label
-          value, opts = extract_label_options(options.delete(:label))
-
-          render(Tw::Forms::LabelComponent.new(
-            method:      method,
-            object_name: object_name,
-            value:       value,
-            options:     opts
-          ))
-        end
-
-        def error_label
-          render(Tw::Forms::LabelComponent.new(
-            method:      method,
-            object_name: object_name,
-            value:       object.errors[method]&.first,
-            alt:         true
-          ))
-        end
-
         def css_class(options)
           ["input", "input-bordered", error_class, options[:class] || ""]
             .join(" ")
@@ -53,15 +33,6 @@ module HotwiredComponent
 
         def error_class
           "input-error" unless object.errors[method].empty?
-        end
-
-        def extract_label_options(options)
-          value = nil
-          opts  = {}
-
-          value = options if options.is_a? String
-          opts  = options if options.is_a? Hash
-          [value, opts]
         end
       end
     end
