@@ -13,7 +13,7 @@ module HotwiredComponent
           @options     = options.merge(
             id:    "#{object_name}_#{method}",
             name:  "#{object_name}[#{method}]",
-            class: css_class(options)
+            class: css_classes(options.delete(:class))
           )
         end
 
@@ -25,10 +25,10 @@ module HotwiredComponent
           "#{object_name}[#{method}]"
         end
 
-        def css_class(options)
-          ["input", "input-bordered", error_class, options[:class] || ""]
+        def css_classes(additional)
+          (["hotwired-component-tw-input"] + Tw.input_classes + [additional])
+            .compact
             .join(" ")
-            .strip
         end
 
         def error_class

@@ -1,6 +1,8 @@
-<div 
-  class="hotwired-component-tw-forms-input" 
-  data-controller="hotwired-component--tw--forms--input--component"
->
+<%= content_tag(
+  :div,
+  data: {
+    controller: "hotwired-component--tw--forms--input--comonent"
+  }) do %>
   <%= text_field_tag(name, options.delete(:value), options) %>
-</div>
+<% end %>
+
