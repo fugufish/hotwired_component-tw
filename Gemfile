@@ -14,6 +14,7 @@ end
 # gem 'byebug', group: [:development, :test]
 gem "capybara", require: false
 gem "debase"
+gem "hotwired_component", path: "../hotwired_component"
 gem "pry-byebug"
 gem "rspec-rails"
 gem "rubocop-daemon"

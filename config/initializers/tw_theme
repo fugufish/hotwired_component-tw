@@ -1,0 +1,2 @@
+HotwiredComponent::Tw.configure do |config|
+end

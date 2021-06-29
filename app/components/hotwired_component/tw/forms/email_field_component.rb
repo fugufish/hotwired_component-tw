@@ -3,7 +3,12 @@
 module HotwiredComponent
   module Tw
     module Forms
-      class EmailFieldComponent < ApplicationComponent
+      class EmailFieldComponent < InputComponent
+        private
+
+        def text_field_tag(*args)
+          email_field_tag(*args)
+        end
       end
     end
   end

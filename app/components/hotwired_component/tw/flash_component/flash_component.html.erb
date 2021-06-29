@@ -1,0 +1,11 @@
+<%= turbo_frame_tag(
+  "daisy-flash",
+  class: "daisy-flash",
+  :"data-controller" => "daisy--flash--component"
+) do %>
+  <% if message %>
+    <div class="alert alert-<%= type %>">
+      <label><%= message %></label>
+    </div>
+  <% end %>
+<% end %>

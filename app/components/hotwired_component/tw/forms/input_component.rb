@@ -30,10 +30,6 @@ module HotwiredComponent
             .compact
             .join(" ")
         end
-
-        def error_class
-          "input-error" unless object.errors[method].empty?
-        end
       end
     end
   end

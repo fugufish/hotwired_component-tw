@@ -33,7 +33,7 @@ module HotwiredComponent
           text_field(method, options.merge(type: "password"))
         end
 
-        def submit(value, options = {})
+        def submit(value = "Submit", options = {})
           template.render(Forms::SubmitButtonComponent.new(
             value:   value,
             options: options

@@ -3,7 +3,12 @@
 module HotwiredComponent
   module Tw
     module Forms
-      class PasswordFieldComponent < ApplicationComponent
+      class PasswordFieldComponent < InputComponent
+        private
+
+        def text_field_tag(*args)
+          password_field_tag(*args)
+        end
       end
     end
   end
